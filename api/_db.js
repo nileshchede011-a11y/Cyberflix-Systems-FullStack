@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 
 const url = process.env.SUPABASE_URL;
-const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 export function dbReady() { return Boolean(url && key); }
 
